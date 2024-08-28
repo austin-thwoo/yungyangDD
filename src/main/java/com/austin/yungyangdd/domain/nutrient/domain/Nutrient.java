@@ -16,6 +16,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name = "T_NUTRIENT")
+//성분
 public class Nutrient {
 
     @Id

@@ -17,7 +17,7 @@ public class UserRegisterCommand {
     private String username;
     private String password;
     private String nickName;
-    private UserType userType;
+
     private String phoneNumber;
     private Long age;
     private UserGender gender;

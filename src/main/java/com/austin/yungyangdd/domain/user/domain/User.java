@@ -100,7 +100,7 @@ public class User extends BaseTimeEntity implements UserDetails {
                 .nickName(registerCommand.getNickName())
                 .password(registerCommand.getPassword())
                 .phoneNumber(registerCommand.getPhoneNumber())
-                .userType(registerCommand.getUserType())
+                .userType(UserType.SEED)
                 .age(registerCommand.getAge())
                 .point(0L)
                 .gender(registerCommand.getGender())

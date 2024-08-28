@@ -20,6 +20,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "T_SUPPLEMENTS")
+//영양제
 public class Supplements {
 
     @Id

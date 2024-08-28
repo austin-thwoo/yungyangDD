@@ -53,6 +53,8 @@ public class RegisterService {
         User user = User.create(registerCommand);
         user.addRole("ROLE_USER");
 
+
+
         return userJpaRepository.save(user);
 
     }

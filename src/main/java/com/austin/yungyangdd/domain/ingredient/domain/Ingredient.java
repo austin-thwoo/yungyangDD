@@ -17,6 +17,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "T_INGREDIENT")
+//재료
 public class Ingredient {
 
     @Id

@@ -30,7 +30,7 @@ public class IngredientApi {
         return new ApiResponse<>(ingredientService.symptomRegister(symptom));
     }
 
-    @ApiOperation(value = "symptomView")
+    @ApiOperation(value = "")
     @GetMapping("/symptom")
     public ApiPagingResponse<SymptomResponse> symptomSave(@AuthenticationPrincipal User principal,
                                                           @RequestParam(name = "page",required = false,defaultValue = "1")int page,

@@ -5,18 +5,17 @@ import com.austin.yungyangdd.domain.user.domain.common.UserType;
 import com.austin.yungyangdd.domain.user.exception.UserNotFoundException;
 import com.austin.yungyangdd.global.dto.DateDTO;
 import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
-import java.util.UUID;
 
 import static com.austin.yungyangdd.domain.user.domain.QUser.user;
+import static com.austin.yungyangdd.domain.test.Qtest.test;
 
 
 @Repository
@@ -103,5 +102,11 @@ public class UserRepositorySupport extends QuerydslRepositorySupport {
         }
 
         return user.createdDate.between(dateDTO.getStartedDate(),dateDTO.getEndedDate());
+    }
+
+    public List<com.austin.yungyangdd.domain.test.test> findByFourString(int count) {
+        return queryFactory.selectFrom(test)
+                .where(Expressions.numberTemplate(Integer.class, "CHAR_LENGTH({0})", test.name).between(1,4)).fetch();
+
     }
 }
